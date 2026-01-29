@@ -16,7 +16,7 @@
    - ОС: Windows 10 x64  
    - Компилятор: MSVC (C++17) / MinGW‑g++ (C++17)  
    - Сборка: CMake 3.16+  
-   - IDE/редактор: Visual Studio Code / Cursor.
+   - IDE/редактор: Visual Studio Code.
 
 3. **Структура проекта и схема данных**
 

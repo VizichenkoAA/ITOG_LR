@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <optional>
+#include <stdexcept>
 
 namespace json
 {

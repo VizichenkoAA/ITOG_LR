@@ -13,12 +13,12 @@
 
 ### Структура проекта
 
-- `src/` — исходный код C++ (`.cpp`)
-- `include/` — заголовочные файлы (`.h/.hpp`)
-- `tests/` — самотесты и бенчмарки
-- `data/` — примеры входных JSON (минимальные, ошибочные и «крупные»)
-- `docs/` — Implementation Plan, основной отчёт, bench-отчёт, лог тестов и пример вывода
-- `scripts/` — вспомогательные скрипты (генерация до 100000 JSON-файлов)
+- `src\` — исходный код C++ (`.cpp`)
+- `include\` — заголовочные файлы (`.h/.hpp`)
+- `tests\` — самотесты и бенчмарки
+- `data\` — примеры входных JSON (минимальные, ошибочные и «крупные»)
+- `docs\` — Implementation Plan, основной отчёт, bench-отчёт, лог тестов и пример вывода
+- `scripts\` — вспомогательные скрипты (генерация до 100000 JSON-файлов)
 
 ### Сборка (CMake)
 
@@ -31,29 +31,27 @@ cmake --build .
 
 Будут собраны:
 
-- `textfreq_cli` — основное консольное приложение,
-- `textfreq_tests` — самотесты и бенчмарк.
+- `textfreq_cli.exe` — основное консольное приложение,
+- `textfreq_tests.exe` — самотесты и бенчмарк.
 
 ### Запуск
 
 Примеры:
 
 ```bash
-./textfreq_cli --help
+Debug\textfreq_cli.exe --help
 
-./textfreq_cli --input ../data/sample_text.json ^
-               --stops ../data/stopwords.json ^
-               --report freq --top 20
+Debug\textfreq_cli.exe --input ../data/sample_text.json --stops ../data/stopwords.json --report freq --top 20
 ```
 
 Результат выводится в консоль в виде форматированных таблиц и сводки.
 Поддерживается вывод в файл через флаг:
 
 ```bash
-./textfreq_cli --input ../data/sample_text.json ^
-               --stops ../data/stopwords.json ^
-               --report freq --top 20 ^
-               --output ../data/report.txt
+Debug\textfreq_cli.exe --input ../data/sample_text.json ^
+                --stops ../data/stopwords.json ^
+                --report freq --top 20 ^
+                --output ../data/report.txt
 ```
 
 Более подробное описание формата JSON и сценария использования приведено в `docs/`.
@@ -61,12 +59,12 @@ cmake --build .
 ### Данные и генерация больших наборов
 
 - Минимальные примеры:
-  - `data/sample_text.json` — один текст в поле `text`;
-  - `data/paragraphs_array.json` — массив абзацев в поле `paragraph`;
-  - `data/stopwords.json` — список стоп-слов.
+  - `data\sample_text.json` — один текст в поле `text`;
+  - `data\paragraphs_array.json` — массив абзацев в поле `paragraph`;
+  - `data\stopwords.json` — список стоп-слов.
 - Ошибочные примеры для негативных тестов:
-  - `data/invalid_missing_text.json`, `data/invalid_broken_json.json`, `data/invalid_wrong_type.json`.
+  - `data\invalid_missing_text.json`, `data\invalid_broken_json.json`, `data\invalid_wrong_type.json`.
 - Крупный набор для бенчмарков:
-  - скрипт `scripts/generate_json.py` создаёт до 100000 JSON-файлов в `data/generated/`.
+  - скрипт `scripts\generate_json.py` создаёт до 100000 JSON-файлов в `data\generated\`.
 
 
